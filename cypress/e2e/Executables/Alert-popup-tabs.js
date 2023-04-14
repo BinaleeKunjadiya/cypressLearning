@@ -7,7 +7,7 @@ describe('first Suite', () => {
     it('test1', () => {
         cy.visit("https://www.rahulshettyacademy.com/AutomationPractice/")
 
-        /*
+        
         //Cypress automatically accepts Alert & pop up confirmation
         // below is how to compare Alert Text 
         cy.get("#alertbtn").click()
@@ -33,21 +33,34 @@ describe('first Suite', () => {
            const url = el.prop('href')
         
         cy.get("#opentab").invoke('removeAttr','target').click()
+        //Work around alternative of above line
+        /*
+        cy.window().then(win => {
+      return win.open(url, ‘_self’);
+    });
+    */
+       
+        // working in different domain URL
         cy.origin(url,() =>
         {
-        cy.url().should("include","qaclickacademy")
-        cy.go('back')
+            cy.url().should("include","qaclickacademy")
+            cy.wait(3000)
+            cy.go('back')    
+            
+        })
+        cy.go('forward')
+        cy.origin(url,() =>
+        {        
+            cy.go('back')             
+        })
         
-        })
-        })
+    })
 
         //Handling Frame 
         cy.frameLoaded("#courses-iframe")
         cy.iframe().find('a[href="https://courses.rahulshettyacademy.com/courses"]').eq(0).click()
         cy.wait(4000)
-        cy.iframe().find('.course-box-image').should('have.length',36)
-
-        */
+        cy.iframe().find('.course-box-image').should('have.length',36)        
 
     })
  }) 

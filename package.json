@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run",
+    "headedtest": "npx cypress run --headed",
+    "chrometest": "npx cypress run --headed browser chrome",
+    "recordingtest":"npx cypress run --record --key 5e8f9c14-d250-4318-a197-ac4892aebb6c --headed browser chrome"
   },
-  "author": "",
+  "author": "", 
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.7"
