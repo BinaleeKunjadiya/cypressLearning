@@ -15,6 +15,9 @@ describe('first Suite', () => {
 
             //Dynamic Dropdown
             cy.get('#autocomplete').type('ind')
+            
+
+            //------------------Assertion----------------- fetching element value text and if Text matches
             cy.get(".ui-menu-item div").each(($el, index, $list) => {   
 
                     if($el.text()==="India")
@@ -23,5 +26,6 @@ describe('first Suite', () => {
                     }
             } )
             cy.get('#autocomplete').should('have.value','India')
+            
         })
      }) 

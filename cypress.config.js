@@ -1,10 +1,14 @@
+
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+
+  projectId: "niadxk",
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
-    specPattern:'cypress/e2e/*.js'
+    
+    specPattern: 'cypress/e2e/Executables/*.js'
+
   },
 });
+
+//messages -> json file ->html
