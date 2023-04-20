@@ -15,7 +15,7 @@ describe('first Suite', () => {
         })
         
     })
-    /*
+    
 
         it('test1', function() {
             const homePage = new Homepage()
@@ -44,7 +44,7 @@ describe('first Suite', () => {
                      
         })
 
-*/
+
         
         // Use of forEach Iterator and custom commands calling 
         //Entire Test Scenario
