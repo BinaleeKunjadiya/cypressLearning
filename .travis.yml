@@ -1,4 +1,4 @@
-jobs:
-  include:
-    script:
-      - npx cypress run
+language: node_js
+node_js: 18.16.1
+script:
+  - npx cypress run
