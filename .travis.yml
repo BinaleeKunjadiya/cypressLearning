@@ -1,0 +1,4 @@
+jobs:
+  include:
+    script:
+      - npx cypress run
